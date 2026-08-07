@@ -2,7 +2,7 @@
 
 [English](README.md) | 中文
 
-这是论文 “EVA: Editing for Versatile Alignment against Jailbreaks” 的官方代码仓库。论文已被 **IEEE TPAMI 2026** 接收 🎉🎉。
+“EVA: Editing for Versatile Alignment against Jailbreaks” 的官方代码仓库。已被 **IEEE TPAMI 2026** 接收 🎉🎉。
 
 [![arXiv](https://img.shields.io/badge/arXiv-paper-b31b1b.svg)](https://arxiv.org/abs/2605.14750)
 [![IEEE TPAMI](https://img.shields.io/badge/IEEE%20TPAMI-paper-00629B.svg?logo=ieee&logoColor=white)](https://ieeexplore.ieee.org/document/11523146)
@@ -38,7 +38,7 @@ python -m pip install ".[gpu]"
 
 ## 模型来源
 
-如果未指定 `--model-path`，EVA 会下载对应模型配置所指定版本的 Hugging Face 模型快照；也可以通过 `--model-path` 指定本地 checkpoint。
+如果未指定 `--model-path`，EVA 会下载对应模型配置所指定版本的 Hugging Face 模型；也可以通过 `--model-path` 指定本地 checkpoint。
 
 | 模型配置 | Hugging Face 仓库 |
 | --- | --- |
@@ -49,7 +49,7 @@ python -m pip install ".[gpu]"
 
 ## 数据
 
-安装后的 EVA 包已包含实验所用的 200 条 JSON 记录和固定的视觉 token 索引。这些行为记录来自 [HarmBench](https://github.com/centerforaisafety/HarmBench) 标准行为数据集。配套的 EVA 图片可从以下位置下载：
+安装后的 EVA 包已包含实验所用的 200 条 JSON 记录和固定的视觉 token 索引。数据来自 [HarmBench](https://github.com/centerforaisafety/HarmBench) 标准行为数据集。配套的 EVA 图片可从以下位置下载：
 
 - [EVA 图片数据（Google Drive）](https://drive.google.com/drive/folders/137l_6BwyXD72OuQ4XE4SHnutW9y6h7Gq?usp=drive_link)
 
@@ -73,7 +73,7 @@ python -m eva inspect \
 
 ## 协方差矩阵（C）
 
-图像编辑和文本编辑会在每个目标语言模型层上共用同一份协方差矩阵。为复现论文实验，建议直接下载预计算矩阵，并将对应模型的压缩包解压到 `cache/covariances`。
+图像编辑和文本编辑会在每个目标语言模型层上共用同一份协方差矩阵。建议直接下载预计算矩阵，并将对应模型的压缩包解压到 `cache/covariances`。
 
 预计算矩阵可从以下位置下载：
 
@@ -125,10 +125,10 @@ python -m eva covariance discover \
   --write-manifest
 ```
 
-如果匹配到多个候选文件，程序不会自动选择。此时可使用 `covariance import --layer N --legacy-path FILE` 明确指定某一层对应的文件。
+如果匹配到多个候选文件，代码不会自动选择。此时可使用 `covariance import --layer N --legacy-path FILE` 明确指定某一层对应的文件。
 
 
-## 使用一条命令完成图像和文本编辑
+## 一条命令完成图像和文本编辑
 
 解压图片和对应的 C 压缩包后，执行：
 
@@ -141,7 +141,7 @@ scripts/eva-edit.sh \
   --device cuda:0
 ```
 
-如果对应版本的模型尚未缓存，该命令会自动下载。可以添加 `--model-path /path/to/checkpoint`，改用本地 Hugging Face checkpoint。如果没有提前解压 C，程序会先计算并保存缺失的矩阵，再开始图像编辑。添加 `--no-auto-covariance` 可关闭自动计算，并在缺少 C 时直接报错。
+如果对应版本的模型尚未缓存，该命令会自动下载。可以添加 `--model-path /path/to/checkpoint`，改用本地 checkpoint。如果没有提前解压 C，代码会先计算并保存缺失的矩阵，再开始图像编辑。添加 `--no-auto-covariance` 可关闭自动计算，并在缺少 C 时直接报错。
 
 EVA 默认使用以下实验参数：
 
@@ -160,10 +160,10 @@ output-dir/
     .eva_checkpoint.json
   final_checkpoint/       完成图像和文本编辑后的完整 VLM、processor 和 tokenizer
     .eva_checkpoint.json
-  run_manifest.json       输入指纹及各阶段的执行记录
+  run_manifest.json       各阶段的执行记录
 ```
 
-程序会先将 checkpoint 写入同级临时目录，确认保存完整后再通过原子重命名移至目标目录。如果图像阶段的 checkpoint 已保存，但文本编辑失败，可在相同命令后添加 `--resume`；程序会跳过图像编辑，并从经过验证的中间 checkpoint 重新开始文本编辑。
+代码会先将 checkpoint 写入同级临时目录，确认保存完整后再通过原子重命名移至目标目录。如果图像阶段的 checkpoint 已保存，但文本编辑失败，可在相同命令后添加 `--resume`；代码会跳过图像编辑，并从经过验证的中间 checkpoint 重新开始文本编辑。
 
 如果模型权重、数据、超参数、图片根目录、记录数量限制或协方差输入发生变化，`--resume` 会拒绝继续。`--force-restart` 只会删除当前输出目录中的 `run_manifest.json`，以及名为 `image_checkpoint` 和 `final_checkpoint` 的两个目录。如需只处理一条记录进行快速功能测试，可使用 `--max-records 1`。
 
@@ -179,7 +179,7 @@ src/eva/resources/configs/hparams/text/
 src/eva/resources/data/
 ```
 
-程序会根据模型对象解析实际加载的模块名称，可识别 `model.language_model.layers.*`、`model.layers.*` 和 `language_model.model.layers.*` 等已知结构。图像和文本两个阶段实际使用的模块路径都会写入 `run_manifest.json`。
+代码会根据模型对象解析实际加载的模块名称，可识别 `model.language_model.layers.*`、`model.layers.*` 和 `language_model.model.layers.*` 等已知结构。图像和文本两个阶段实际使用的模块路径都会写入 `run_manifest.json`。
 
 ## 欢迎大家引用
 
