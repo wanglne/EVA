@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "final": "final_checkpoint",
+    "intermediate": "image_checkpoint"
+  },
+  "covariance": {
+    "artifact": {
+      "archive_name": "eva-covariance-llava-1.5-7b.zip",
+      "precomputed_source": {
+        "availability": "retired",
+        "config": "20200501.en",
+        "repo_id": "wikipedia"
+      }
+    },
+    "canonical_identity": "llava15_mom2_wikipedia_100000_float32",
+    "compute_dataset": {
+      "config": "20231101.en",
+      "repo_id": "wikimedia/wikipedia",
+      "revision": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa",
+      "split": "train"
+    },
+    "dataset": "wikipedia",
+    "dtype": "float32",
+    "legacy_filename_patterns": [
+      "**/language_model.model.layers.{layer}.mlp.down_proj_float32_mom2_100000.npz"
+    ],
+    "sample_size": 100000
+  },
+  "datasets": {
+    "image": {
+      "attention_index_field": "attn_token_idx",
+      "expected_attention_key": "attn_layer_8",
+      "path": "data/HarmBench_images_llava.json"
+    },
+    "text": {
+      "path": "data/HarmBench.json"
+    },
+    "update_schedule": {
+      "ordering": "sequential",
+      "records_per_update": 1,
+      "updates": 200
+    }
+  },
+  "hparams": {
+    "image_path": "configs/hparams/image/llava-1.5-7b.json",
+    "text_path": "configs/hparams/text/llava-1.5-7b.json"
+  },
+  "model": {
+    "checkpoint_name": "llava-v1.5",
+    "dtype": "float16",
+    "family": "llava",
+    "expectations": {
+      "architecture": "LLaVA 1.5 vision-language causal LM",
+      "model_type": "llava"
+    },
+    "key": "llava-1.5-7b",
+    "legacy_key": "llava15",
+    "huggingface": {
+      "repo_id": "llava-hf/llava-1.5-7b-hf",
+      "revision": "95f2cf316249a98c11183f471ab76065c3e5f494"
+    },
+    "model_path": {
+      "explicit_override": true,
+      "source": "huggingface"
+    },
+    "trust_remote_code": false
+  }
+}

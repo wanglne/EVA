@@ -1,0 +1,21 @@
+{
+  "clamp_norm_factor": 0.75,
+  "fact_token": "subject_last",
+  "kl_factor": 0.1,
+  "layer_selection": "all",
+  "layers": [
+    7,
+    8
+  ],
+  "mom2_adjustment": true,
+  "mom2_dataset": "wikipedia",
+  "mom2_dtype": "float32",
+  "mom2_n_samples": 100000,
+  "mom2_update_weight": 15000,
+  "profile_key": "llava-1.5-7b",
+  "stage": "image",
+  "v_loss_layer": 31,
+  "v_lr": 0.0055,
+  "v_num_grad_steps": 25,
+  "v_weight_decay": 0.5
+}

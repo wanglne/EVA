@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "final": "final_checkpoint",
+    "intermediate": "image_checkpoint"
+  },
+  "covariance": {
+    "artifact": {
+      "archive_name": "eva-covariance-internvl3.5-8b.zip",
+      "precomputed_source": {
+        "availability": "retired",
+        "config": "20200501.en",
+        "repo_id": "wikipedia"
+      }
+    },
+    "canonical_identity": "internvl35_mom2_wikipedia_100000_float32",
+    "compute_dataset": {
+      "config": "20231101.en",
+      "repo_id": "wikimedia/wikipedia",
+      "revision": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa",
+      "split": "train"
+    },
+    "dataset": "wikipedia",
+    "dtype": "float32",
+    "legacy_filename_patterns": [
+      "**/language_model.model.layers.{layer}.mlp.down_proj_float32_mom2_100000.npz"
+    ],
+    "sample_size": 100000
+  },
+  "datasets": {
+    "image": {
+      "attention_index_field": "attn_token_idx",
+      "expected_attention_key": "attn_layer_9",
+      "path": "data/HarmBench_images_internvl.json"
+    },
+    "text": {
+      "path": "data/HarmBench.json"
+    },
+    "update_schedule": {
+      "ordering": "sequential",
+      "records_per_update": 1,
+      "updates": 200
+    }
+  },
+  "hparams": {
+    "image_path": "configs/hparams/image/internvl3.5-8b.json",
+    "text_path": "configs/hparams/text/internvl3.5-8b.json"
+  },
+  "model": {
+    "checkpoint_name": "InternVL3.5",
+    "dtype": "bfloat16",
+    "family": "internvl",
+    "expectations": {
+      "architecture": "InternVL 3.5 vision-language chat model",
+      "model_type": "internvl_chat"
+    },
+    "key": "internvl3.5-8b",
+    "legacy_key": "internvl35",
+    "huggingface": {
+      "repo_id": "OpenGVLab/InternVL3_5-8B",
+      "revision": "9bb6a56ad9cc69db95e2d4eeb15a52bbcac4ef79"
+    },
+    "model_path": {
+      "explicit_override": true,
+      "source": "huggingface"
+    },
+    "trust_remote_code": true
+  }
+}

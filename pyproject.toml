@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eva-edit"
+version = "0.1.0"
+description = "Editing for Versatile Alignment against jailbreaks"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Yi Wang" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.10",
+  "ruff>=0.6",
+]
+gpu = [
+  "accelerate>=1.5",
+  "datasets>=2.18",
+  "einops>=0.8",
+  "huggingface-hub>=0.30",
+  "numpy>=1.26",
+  "pillow>=10",
+  "qwen-vl-utils>=0.0.8",
+  "sentencepiece>=0.2",
+  "timm>=1.0",
+  "torch>=2.4",
+  "torchvision>=0.19",
+  "transformers>=4.51,<6",
+]
+
+[project.scripts]
+eva = "eva.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"eva.resources" = [
+  "configs/models/*.json",
+  "configs/hparams/image/*.json",
+  "configs/hparams/text/*.json",
+  "data/*.json",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+packages = ["eva"]
