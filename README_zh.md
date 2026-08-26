@@ -6,7 +6,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-paper-b31b1b.svg)](https://arxiv.org/abs/2605.14750)
 [![IEEE TPAMI](https://img.shields.io/badge/IEEE%20TPAMI-paper-00629B.svg?logo=ieee&logoColor=white)](https://ieeexplore.ieee.org/document/11523146)
-[![Hugging Face Models](https://img.shields.io/badge/🤗%20Hugging%20Face-EVA%20Models-FFD21E)](https://huggingface.co/wanglne/models)
+[![Hugging Face Collection](https://img.shields.io/badge/🤗%20Hugging%20Face-EVA%20Collection-FFD21E)](https://huggingface.co/collections/wanglne/eva-editing-for-versatile-alignment-against-jailbreaks)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 方法概述
