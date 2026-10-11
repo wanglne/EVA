@@ -224,7 +224,7 @@ both stages are written to `run_manifest.json`.
 ## Citation
 
 ```bibtex
-@ARTICLE{11523146,
+@ARTICLE{wang2026eva,
   author={Wang, Yi and Qiu, Hongye and Xu, Yue and Yang, Sibei and Qin, Zhan and Huang, Minlie and Wang, Wenjie},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
   title={EVA: Editing for Versatile Alignment against Jailbreaks},
