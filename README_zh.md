@@ -1,13 +1,24 @@
-# EVA
+<h1 align="center">[IEEE TPAMI 2026] EVA: Editing for Versatile Alignment Against Jailbreaks</h1>
+
+<p align="center">
+  <a href="https://wanglne.github.io/">Yi Wang</a> ·
+  <a href="https://openreview.net/profile?id=~Hongye_Qiu1">Hongye Qiu</a> ·
+  <a href="https://savannahxu79.github.io/">Yue Xu</a> ·
+  <a href="https://sibeiyang.github.io/">Sibei Yang</a> ·
+  <a href="https://person.zju.edu.cn/en/zhanqin">Zhan Qin</a> ·
+  <a href="https://coai.cs.tsinghua.edu.cn/hml">Minlie Huang</a> ·
+  <a href="https://wwj95.github.io/">Wenjie Wang</a><sup>†</sup>
+</p>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2605.14750"><img src="https://img.shields.io/badge/arXiv-2605.14750-b31b1b.svg" alt="arXiv: 2605.14750"></a>
+  <a href="https://ieeexplore.ieee.org/abstract/document/11523146"><img src="https://img.shields.io/badge/IEEE%20TPAMI-2026-68488B.svg?logo=ieee&amp;logoColor=white" alt="IEEE TPAMI 2026"></a>
+  <a href="https://wanglne.github.io/EVA-page/"><img src="https://img.shields.io/badge/Project-Page-6366F1.svg" alt="Project Page"></a>
+  <a href="https://huggingface.co/collections/wanglne/eva-editing-for-versatile-alignment-against-jailbreaks"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-FFD21E.svg" alt="Hugging Face Models"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-22C55E.svg" alt="License: MIT"></a>
+</p>
 
 [English](README.md) | 中文
-
-“EVA: Editing for Versatile Alignment against Jailbreaks” 的官方代码仓库。已被 **IEEE TPAMI 2026** 接收 🎉🎉。
-
-[![arXiv](https://img.shields.io/badge/arXiv-paper-b31b1b.svg)](https://arxiv.org/abs/2605.14750)
-[![IEEE TPAMI](https://img.shields.io/badge/IEEE%20TPAMI-paper-00629B.svg?logo=ieee&logoColor=white)](https://ieeexplore.ieee.org/abstract/document/11523146)
-[![Hugging Face Collection](https://img.shields.io/badge/🤗%20Hugging%20Face-EVA%20Collection-FFD21E)](https://huggingface.co/collections/wanglne/eva-editing-for-versatile-alignment-against-jailbreaks)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 方法概述
 
